@@ -403,9 +403,8 @@
         </div>
       </div>
       <div class="meta-block">
-        <div class="meta-row"><span class="dot"></span><span class="lbl">Corte</span><span class="val" id="meta-corte"></span></div>
-        <div class="meta-row"><span class="dot" style="animation-delay:.4s"></span><span class="lbl">Periodo</span><span class="val" id="meta-periodo"></span></div>
-        <div class="meta-row badge-row"><span class="dot" style="animation-delay:.8s"></span><span class="val" id="updatedBadge"><span class="ub-line">Actualizado el <span id="updatedAt">03-oct-2026 02:16</span></span><span class="ub-line">Con datos al <span id="dataAsOf"></span></span></span></div>
+        <div class="meta-row"><span class="dot"></span><span class="lbl">Periodo</span><span class="val" id="meta-periodo"></span></div>
+        <div class="meta-row badge-row"><span class="dot" style="animation-delay:.4s"></span><span class="val" id="updatedBadge"><span class="ub-line">Actualizado el <span id="updatedAt">03 oct 2026 10:16</span></span><span class="ub-line">Con datos al <span id="dataAsOf"></span></span></span></div>
       </div>
     </div>
   </header>
@@ -561,8 +560,7 @@ let CUR = 'bs'; // 'bs' | 'usd'
 
 /* ================= fechas (sin locale: mes desde arreglo fijo, año de 4 dígitos) ================= */
 const MESES_ABR = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
-function fmtDMA(iso){ return iso.slice(8,10) + '-' + MESES_ABR[+iso.slice(5,7)-1] + '-' + iso.slice(0,4); }
-function fmtDMAbarra(iso){ return iso.slice(8,10) + '/' + iso.slice(5,7) + '/' + iso.slice(0,4); }
+function fmtDMA(iso){ return iso.slice(8,10) + ' ' + MESES_ABR[+iso.slice(5,7)-1] + ' ' + iso.slice(0,4); }
 function fmtPeriodo(ini, fin){
   const a = ini.slice(8,10) + ' ' + MESES_ABR[+ini.slice(5,7)-1];
   const sameYear = ini.slice(0,4) === fin.slice(0,4);
@@ -1041,7 +1039,6 @@ document.getElementById('dl-pdf').addEventListener('click', downloadPDF);
 
 /* ================= orquestador ================= */
 function renderHeaderMeta(){
-  document.getElementById('meta-corte').textContent = fmtDMAbarra(DATA.meta.corte);
   document.getElementById('meta-periodo').textContent = periodoText();
   document.getElementById('dataAsOf').textContent = DATA_AS_OF;
   document.getElementById('detalle-desc').textContent = DATA.facturas.length + ' facturas — filtra por cliente, canal o tramo de antigüedad';
