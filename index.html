@@ -215,8 +215,8 @@
   }
   .meta-row.badge-row{ align-items:flex-start; }
   .badge-row .dot{ margin-top:5px; }
-  .badge-row .val{ text-align:left; }
-  .badge-row .ub-line{ display:block; line-height:1.35; }
+  .badge-row #updatedBadge{ display:flex; flex-direction:column; gap:8px; }
+  .badge-row .ub-line{ display:flex; align-items:center; gap:9px; }
   .meta-row .lbl{ font-size:12.5px; color:var(--text-faint); }
   .meta-row .val{ font-size:13.5px; font-weight:600; color:var(--text); }
 
@@ -404,7 +404,7 @@
       </div>
       <div class="meta-block">
         <div class="meta-row"><span class="dot"></span><span class="lbl">Periodo</span><span class="val" id="meta-periodo"></span></div>
-        <div class="meta-row badge-row"><span class="dot" style="animation-delay:.4s"></span><span class="val" id="updatedBadge"><span class="ub-line">Actualizado el <span id="updatedAt">03 oct 2026 10:16</span></span><span class="ub-line">Con datos al <span id="dataAsOf"></span></span></span></div>
+        <div class="meta-row badge-row"><span class="dot" style="animation-delay:.4s"></span><div id="updatedBadge"><div class="ub-line"><span class="lbl">Actualizado el</span> <span class="val" id="updatedAt">03 oct 2026 10:33</span></div><div class="ub-line"><span class="lbl">Con datos al</span> <span class="val" id="dataAsOf"></span></div></div></div>
       </div>
     </div>
   </header>
